@@ -1,0 +1,47 @@
+{
+  "actions": [
+    {
+      "description": "Default Welcome Intent",
+      "name": "MAIN",
+      "fulfillment": {
+        "conversationName": "lifeStyleFullfillment"
+      },
+      "intent": {
+        "name": "actions.intent.MAIN",
+        "trigger": {
+          "queryPatterns": [
+            "talk to life stats"
+          ]
+        }
+      }
+    },
+    {
+      "name": "COFFEE",
+      "intent": {
+        "name": "com.example.lifestats.COFFEE",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "org.schema.type.Number"
+          }
+        ],
+        "trigger": {
+          "queryPatterns": [
+            "add $org.schema.type.Number:number coffees"
+          ]
+        }
+      },
+      "fulfillment": {
+        "conversationName": "lifeStyleFullfillment"
+      }
+    }
+  ],
+  "conversations": {
+    "lifeStyleFullfillment": {
+      "name": "lifeStyleFullfillment",
+      "url": "https://us-central1-life-stats-168c9.cloudfunctions.net/lifeStyleFullfillment",
+      "fulfillmentApiVersion": 2
+    }
+  },
+  "locale": "en"
+}

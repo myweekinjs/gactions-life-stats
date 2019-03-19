@@ -66,3 +66,7 @@ node_modules/
 
 creds.data
 .firebaserc
+
+deploy-action
+deploy-functions
+LifeStats/
